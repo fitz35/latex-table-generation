@@ -19,11 +19,8 @@
             clang
             llvmPackages.bintools
             rustup
-            wasm-pack # for wasm
 
-            # npm (for wasm)
-            nodejs
-
+            trunk
             # plotter
             pkg-config 
             fontconfig
