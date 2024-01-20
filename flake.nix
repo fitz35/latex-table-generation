@@ -15,9 +15,7 @@
         
 
         devShell = pkgs.mkShell rec {
-          venvDir = "./.venv";
           buildInputs = with pkgs; [
-            autoPatchelfHook
             clang
             llvmPackages.bintools
             rustup
@@ -35,11 +33,6 @@
 
           RUSTC_VERSION = pkgs.lib.readFile ./rust-toolchain;
           LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
-
-          postVenvCreation = ''
-            unset SOURCE_DATE_EPOCH
-            autoPatchelf ./venv
-          '';
 
           postShellHook = ''
             unset SOURCE_DATE_EPOCH
