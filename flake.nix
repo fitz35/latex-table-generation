@@ -17,6 +17,7 @@
         devShell = pkgs.mkShell rec {
           venvDir = "./.venv";
           buildInputs = with pkgs; [
+            autoPatchelfHook
             clang
             llvmPackages.bintools
             rustup
@@ -37,6 +38,7 @@
 
           postVenvCreation = ''
             unset SOURCE_DATE_EPOCH
+            autoPatchelf ./venv
           '';
 
           postShellHook = ''
