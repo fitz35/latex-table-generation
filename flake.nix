@@ -19,6 +19,7 @@
             clang
             llvmPackages.bintools
             rustup
+            wasm-pack # for wasm
 
             # npm (for wasm)
             nodejs
@@ -28,7 +29,8 @@
             fontconfig
             freetype
             openssl.dev
-          
+
+            
           ];
 
           RUSTC_VERSION = pkgs.lib.readFile ./rust-toolchain;
