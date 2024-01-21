@@ -20,7 +20,8 @@
             llvmPackages.bintools
             rustup
 
-            trunk
+            wasm-pack
+            nodejs
             # plotter
             pkg-config 
             fontconfig
