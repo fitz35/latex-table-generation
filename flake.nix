@@ -21,6 +21,13 @@
             rustup
 
             wasm-pack
+
+            # webpack for dev server
+            nodePackages.webpack
+            nodePackages.webpack-cli
+            nodePackages.webpack-dev-server
+            nodePackages.copy-webpack-plugin
+
             nodejs
             # plotter
             pkg-config 

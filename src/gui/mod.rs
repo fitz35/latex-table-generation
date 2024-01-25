@@ -1,18 +1,17 @@
 use serde::{Deserialize, Serialize};
 
+use crate::table::Table;
 
-
-#[derive(Deserialize, Serialize)]
-#[serde(default)] // if we add new fields, give them default values when deserializing old state
+#[derive(Serialize, Deserialize)]
 pub struct LatexTableGui {
-
-
+    table: Table,
 }
 
 impl Default for LatexTableGui {
+    // initialize with default values
     fn default() -> Self {
         Self {
-            // ...
+            table: Table::default(),
         }
     }
 }

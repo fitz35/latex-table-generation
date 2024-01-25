@@ -5,8 +5,10 @@ use wasm_bindgen::prelude::*;
 use crate::gui::LatexTableGui;
 
 mod gui;
+mod table;
 
 /// Your handle to the web app from JavaScript.
+///     rust -> js
 #[derive(Clone)]
 #[wasm_bindgen]
 pub struct WebHandle {
@@ -51,12 +53,7 @@ impl WebHandle {
     }
 
     #[wasm_bindgen]
-    pub fn panic_message(&self) -> Option<String> {
-        self.runner.panic_summary().map(|s| s.message())
-    }
-
-    #[wasm_bindgen]
-    pub fn panic_callstack(&self) -> Option<String> {
+    pub fn panic_tablecallstack(&self) -> Option<String> {
         self.runner.panic_summary().map(|s| s.callstack())
     }
 
