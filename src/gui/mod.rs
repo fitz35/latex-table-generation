@@ -34,14 +34,21 @@ impl LatexTableGui {
 
 
 impl eframe::App for LatexTableGui {
-    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+    fn update(
+        &mut self, 
+        ctx: &egui::Context, 
+        frame: &mut eframe::Frame
+    ) {
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             // The top panel is often a good place for a menu bar:
 
             egui::menu::bar(ui, |ui| {
-
                 egui::widgets::global_dark_light_mode_buttons(ui);
             });
+            if ui.button("Generate dummy").clicked() {
+                println!("Generate dummy table");
+                self.table = Table::dummy();
+            }
         });
     }
 }

@@ -8,6 +8,8 @@ Use rust as back of a web app with [WebAssembly](https://www.rust-lang.org/fr/wh
 
 ### Compilation to wasm and serve with npm
 
-
 `wasm-pack build --target bundler`: Used to build the sources in the pkg/ folder. Do it after every rust change.
-Then, use `npm run serve` in the `site/` folder to serve the app.
+
+`npm install`: Install all dependencies declared in `package.json`, including the custom `latex-table-generation` WASM Rust library.
+
+`npm run serve`: Run the dev server. Need to have compiled and installed dependencies with `npm install` before.

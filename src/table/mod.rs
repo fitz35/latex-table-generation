@@ -55,3 +55,21 @@ impl Default for TableMetaData {
         }
     }
 }
+
+impl Table {
+    /// Generate dummy table for testing
+    pub fn dummy() -> Self {
+        let mut table = Table::default();
+        table.table.headers = vec!["A".to_string(), "B".to_string(), "C".to_string()];
+        table.table.rows = vec![
+            vec!["1".to_string(), "2".to_string(), "3".to_string()],
+            vec!["4".to_string(), "5".to_string(), "6".to_string()],
+            vec!["7".to_string(), "8".to_string(), "9".to_string()],
+        ];
+        table.table.width = 3;
+        table.table.height = 3;
+        table.meta.caption = "Dummy table".to_string();
+        table.meta.label = "dummy".to_string();
+        table
+    }
+}
